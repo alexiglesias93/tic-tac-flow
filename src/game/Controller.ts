@@ -7,10 +7,10 @@ export class Controller {
   private readonly view: View;
 
   constructor() {
-    this.setEventListeners();
-    this.setCellEventListeners();
     this.model = new Model();
     this.view = new View();
+    this.setEventListeners();
+    this.setCellEventListeners();
   }
 
   /**
@@ -25,7 +25,7 @@ export class Controller {
    */
   setCellEventListeners() {
     const handler = (e: MouseEvent) => {
-      const cell = e.target as HTMLDivElement;
+      const cell = e.currentTarget as HTMLDivElement;
       this.handleCellClick(cell);
     };
 
